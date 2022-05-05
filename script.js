@@ -81,4 +81,9 @@ console.log(totalProduct(7, 7));//49
 // Change the background color of this element to 'blue'.
 document.write('<div class="bg" style="width: 100%; height: 100%; color: #FFF; display: flex; align-items: center; justify-content: center;">Bluescreen of death!</div>');
 
+document.getElementsByClassName("bg").style.backgroundColor = "blue";
 
+var elements = document.getElementsByClassName('bg'); // get all elements
+	for(var i = 0; i < elements.length; i++){
+		elements[i].style.backgroundColor = "blue";
+	}
