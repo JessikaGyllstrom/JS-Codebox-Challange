@@ -109,7 +109,7 @@ function camelCase(n) {
     for (var i = 1; i < separateWord.length; i++) {
        separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
        // the substring method extracts characters between two 
-       // indices from a string and returns a substrin
+       // indices from a string and returns a substring 
        separateWord[i].substring(1);
     }
     return separateWord.join(''); 
@@ -118,3 +118,38 @@ console.log(camelCase('String not found')); //stringNotFound
 console.log(camelCase('Nice Challenge')); //niceChallenge
 
 //w3Schools on substrings
+
+let text = "Hello world!";
+let result = text.substring(4, 1);
+console.log(result); //ell
+
+let txt = "Hello world!"; 
+let res = text.substring(-6, 6);
+console.log(res); //Hello
+
+//w3Schools on charAt
+
+// Get the last character in a string:
+let str = "HELLO WORLD";
+let letter = str.charAt(str.length-1);
+console.log(letter); // D
+
+let t = "HELLO WORLD";
+let l = t.charAt(4); // O
+let q = t.charAt(5); // returns space __
+
+
+/* Given is a String string and a number n. 
+Return a string with the section from 0 to n in a row. 
+In each run n is to be decremented. */
+function repeater(string, n) {
+  let result = "";
+  for(let i = 0; i < string.length; i++ ){
+    result += string.substring(0, n);
+    n--;
+  }
+  return result;
+}
+console.log(repeater('JSCodebox', 6));// 'JSCodeJSCodJSCoJSCJSJ'
+console.log(repeater('Foobar', 2)); // FoF
+console.log(repeater('Hello coder!', 5)); //'HelloHellHelHeH'
