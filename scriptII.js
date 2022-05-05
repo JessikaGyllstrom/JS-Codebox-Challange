@@ -90,11 +90,31 @@ console.log(printHeadline("This is a headline")); */
 // Two variables are given key and value. 
 // Return these values in JSON notation.
 function firstJSON(key, value) {
-
-let obj = {
-}
-obj[`${key}`] = value;
-
+  let obj = {
+  }
+  obj[`${key}`] = value;
   return obj;
 }
-console.log(firstJSON('name', 'JSCodebox'));
+console.log(firstJSON('name', 'JSCodebox')); //{ name: 'JSCodebox' }
+console.log(firstJSON('difficulty', '42')); // { difficulty: '42' }
+
+/* Given is a string n. The task is to return the sentence in CamelCase 
+notation. This means that each new word is capitalized and immediately 
+appended to the old word. Start with a lowercase letter. */
+function camelCase(n) {
+    // split string into words => [ 'string', 'not', 'found' ]
+    // split () method splits a string into an array of substrings
+    // returns a new array
+    var separateWord = n.toLowerCase().split(' ');
+    for (var i = 1; i < separateWord.length; i++) {
+       separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+       // the substring method extracts characters between two 
+       // indices from a string and returns a substrin
+       separateWord[i].substring(1);
+    }
+    return separateWord.join(''); 
+}
+console.log(camelCase('String not found')); //stringNotFound
+console.log(camelCase('Nice Challenge')); //niceChallenge
+
+//w3Schools on substrings
