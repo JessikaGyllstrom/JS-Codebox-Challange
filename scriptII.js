@@ -45,5 +45,15 @@ function strangeWord(word) {
   }
   return result;
 }
-console.log(strangeWord('JSCodebox'));
-console.log(strangeWord('Challenge'));
+console.log(strangeWord('JSCodebox')); //JCdbx
+console.log(strangeWord('Challenge')); //Calne
+
+/* Given are two arrays a and b, both have three elements. 
+Return a new array of length 2 containing both middle (index 1) elements of the arrays. */ 
+function goldenMiddle(a, b) {
+  const array = [];
+  array[0] = a[1];
+  array[1] = b[1];
+  return array;
+}
+console.log(goldenMiddle([1,6,8], [4,6,2])); // 6,6
