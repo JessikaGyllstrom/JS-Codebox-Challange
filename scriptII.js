@@ -153,3 +153,16 @@ function repeater(string, n) {
 console.log(repeater('JSCodebox', 6));// 'JSCodeJSCodJSCoJSCJSJ'
 console.log(repeater('Foobar', 2)); // FoF
 console.log(repeater('Hello coder!', 5)); //'HelloHellHelHeH'
+
+
+// A string sentence is given. Return true if the block starts with "Hello".
+function firstHello(sentence) {
+  var separateWord = sentence.toLowerCase().split(' ');
+  if(separateWord[0] == "hello") {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(firstHello('Hello world!'));//true
+console.log(firstHello('Whats up?'));//false
