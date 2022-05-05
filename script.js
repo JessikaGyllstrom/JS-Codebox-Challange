@@ -45,9 +45,40 @@ function littleChild(child1, child2) {
     if ((child1 >= 0 && child1 <=14) && (child2 >= 0 && child2 <=14)) {
         return false;
     }
-    if ((child1 >= 0 && child1 <=14) || (child2 >= 0 && child2 <=14)) {
+    else if ((child1 >= 0 && child1 <=14) || (child2 >= 0 && child2 <=14)) {
         return true;
-    } 
+    } else {
+        return true;
+    }
 }
 console.log(littleChild(4, 15));//true
 console.log(littleChild(9, 7));//false
+console.log(littleChild(21, 20));//false
+console.log(littleChild(0, 3));//false
+console.log(littleChild(15, 13));//true
+
+// The parameter n is given. 
+// Return the difference of n to the number 42. 
+let difference42= (n) => 42 - n;
+console.log(difference42(7));//35
+console.log(difference42(42));//0
+
+// Two numbers are given a and b. Return their sum. 
+// If both numbers are equal, return their product.
+function totalProduct(a, b) {
+    if(a!=b) {
+        let sum = a + b;
+        return sum;
+    } else {
+        let product = a * b;
+        return product;
+    }
+}
+console.log(totalProduct(2, 0));//2
+console.log(totalProduct(7, 7));//49
+
+// The HTML element .bg is given. 
+// Change the background color of this element to 'blue'.
+document.write('<div class="bg" style="width: 100%; height: 100%; color: #FFF; display: flex; align-items: center; justify-content: center;">Bluescreen of death!</div>');
+
+
