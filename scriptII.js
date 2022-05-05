@@ -1,5 +1,6 @@
 // Code a for loop that runs through all numbers from 0-99 
 // and append all numbers divisible by seven into a string. 
+
 // Return this string.
 function easyLoop() {
   let result = "";
@@ -57,3 +58,30 @@ function goldenMiddle(a, b) {
   return array;
 }
 console.log(goldenMiddle([1,6,8], [4,6,2])); // 6,6
+
+/* Given is an object obj each with two properties (name & category) of type String. 
+Return the value of the property with the longer string. If both are of equal length, 
+return the value of the name property.*/
+function theGround(obj) {
+  if (obj.name.length == obj.category.length) {
+    return obj.name;
+  }
+  else if(obj.name < obj.category) {
+    return obj.name;
+  } else {
+    return obj.category;
+  }
+}
+console.log(theGround({"name":"dirt","category":"alpha"})); //alpha
+console.log(theGround({"name":"stone","category":"alpha"})); //stone
+console.log(theGround({"name":"quartz","category":"gamma"})); //gamma
+
+/* Given is a text headline. Write this string in a h1 HTML tag and 
+append it to the HTML body.*/ 
+function printHeadline(headline) {
+  var myDiv = document.createElement("div");
+  myDiv.id = 'div_id';
+  myDiv.innerHTML = `<h1>${headline}</h1>`;
+  document.body.appendChild(myDiv);
+}
+console.log(printHeadline("This is a headline")); 
