@@ -78,10 +78,23 @@ console.log(theGround({"name":"quartz","category":"gamma"})); //gamma
 
 /* Given is a text headline. Write this string in a h1 HTML tag and 
 append it to the HTML body.*/ 
-function printHeadline(headline) {
+
+/*function printHeadline(headline) {
   var myDiv = document.createElement("div");
   myDiv.id = 'div_id';
   myDiv.innerHTML = `<h1>${headline}</h1>`;
   document.body.appendChild(myDiv);
 }
-console.log(printHeadline("This is a headline")); 
+console.log(printHeadline("This is a headline")); */
+
+// Two variables are given key and value. 
+// Return these values in JSON notation.
+function firstJSON(key, value) {
+
+let obj = {
+}
+obj[`${key}`] = value;
+
+  return obj;
+}
+console.log(firstJSON('name', 'JSCodebox'));
