@@ -180,3 +180,30 @@ function palindrome(pali) {
 }
 console.log(palindrome('racecar')); //true
 console.log(palindrome('baseball')); //false
+
+
+// Given is a string item, with an item and a price in brackets. Return the price.
+function getPrice(item) {
+  let price = item.replace(/.*\(|\).*/g, '');  
+  return price;
+}
+console.log(getPrice('Ice ($4.20)'));
+console.log(getPrice('Potatoe salad ($6.50)'));
+
+/* Given are two strings correct and wrong. 
+Return all characters that are defective. 
+You can recognize defective characters by the 
+fact that they are displayed incorrectly in 
+the string wrong. Return an array with their values. */
+function keyboardError(correct, wrong) {
+  let result = "";
+  for (let i = 0; i < correct.length; i ++) {
+    if(correct[i] !== wrong[i]){
+      result += correct[i];
+    }
+  }
+  return Array.from(new Set(result));
+}
+console.log(keyboardError('foobar', 'fiibnr')); // [ 'o', 'a' ]
+console.log(keyboardError('hello there', 'hgllu thgrg')); // [ 'e', 'o' ]
+
