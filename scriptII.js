@@ -244,3 +244,13 @@ console.log(bin2dec('101010')); //42
 const dec2bin = (dec) => dec.toString(2);
 console.log(dec2bin(50)); //110010
 console.log(dec2bin(42)); //101010
+
+// Given is a number price and a number discount. 
+// Return the calculated discounted price.
+function getReducedPrice(price, discount) {
+  let part = price * (discount / 100);
+  let result = price - part;
+  return result;
+}  
+console.log(getReducedPrice(1000, 20)); // 800
+console.log(getReducedPrice(99, 10)); //89.1
