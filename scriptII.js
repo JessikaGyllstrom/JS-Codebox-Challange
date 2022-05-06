@@ -234,8 +234,13 @@ console.log(checkPassword('Joifd$3', 'Joifd$3'));//false
 
 // Given is a binary number bin.
 // Return this number as a number in the decimal number system.
-let bin2dec = (bin) =>  bin = parseInt(bin, 2); 
+const bin2dec = (bin) =>  bin = parseInt(bin, 2); 
 console.log(bin2dec('110010')); //50
 console.log(bin2dec('10')); //2
 console.log(bin2dec('101010')); //42
 
+// Given is a decimal number dec. 
+// Return this number as a number in the binary number system.
+const dec2bin = (dec) => dec.toString(2);
+console.log(dec2bin(50)); //110010
+console.log(dec2bin(42)); //101010
