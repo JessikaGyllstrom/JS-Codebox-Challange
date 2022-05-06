@@ -231,3 +231,11 @@ console.log(checkPassword('omvdsse', 'omvdsse'));//false
 console.log(checkPassword('YY&glk4Hfi_ffS', 'YY&glk4Hfi_ffS'));//true
 console.log(checkPassword('JoFDd$0MY6Ad4', 'JoFDd$0MY6Ad4'));//true
 console.log(checkPassword('Joifd$3', 'Joifd$3'));//false
+
+// Given is a binary number bin.
+// Return this number as a number in the decimal number system.
+let bin2dec = (bin) =>  bin = parseInt(bin, 2); 
+console.log(bin2dec('110010')); //50
+console.log(bin2dec('10')); //2
+console.log(bin2dec('101010')); //42
+
