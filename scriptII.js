@@ -166,3 +166,17 @@ function firstHello(sentence) {
 }
 console.log(firstHello('Hello world!'));//true
 console.log(firstHello('Whats up?'));//false
+
+/* A variable pali is given. Return true if it is a palindrome. 
+Otherwise false. A palindrome is a word that is read forward and 
+backward, resulting in the same word.*/ 
+function palindrome(pali) {
+  let string =   pali.split('').reverse().join('');
+  if (pali === string) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(palindrome('racecar')); //true
+console.log(palindrome('baseball')); //false
