@@ -296,3 +296,74 @@ function cinemaQueue(max, visitors) {
 console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X'])); //full
 console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X','X','X'])); //too much
 console.log(cinemaQueue(4, ['X','O','X'])); //not full: 2
+console.log(cinemaQueue(8, ['X','O','X','X'])); //not full: 5 
+
+// Given is an array numbers with different numbers. 
+// Return an array in which the first entry is swapped with the last. 
+// The rest remains unchanged.
+function swap(numbers) {
+  [numbers[0], numbers[numbers.length-1]] = [numbers[numbers.length-1], numbers[0]];
+  return numbers;
+}
+console.log(swap([1,5,3,7,2,7,3])); // 3, 5, 3, 7, 2, 7, 1
+console.log(swap([1,6,2,7,9,3,4])); // 4, 6, 2, 7, 9, 3, 1
+
+/* The string greeting is given. Output this string in a HTML p tag 
+and color the font green if greeting contains the word 'Hi' 
+and blue if greeting contains the word 'Hello'. 
+If both occur, the word turns red. */ 
+
+/*function headline2(greeting) {
+  const para = document.createElement("p");
+  para.innerText = "This is a paragraph";
+  document.body.appendChild(para);
+  if ( greeting.includes("Hi") && greeting.includes("Hello")) {
+    para.style.color = "red";
+  }
+  else if(greeting.includes("Hi")) {
+    para.style.color = "blue";
+  } else if(greeting.includes("Hello")) {
+      para.style.color = "green";
+  }
+}
+console.log(headline2("Hi")); 
+console.log(headline2("Hello")); 
+console.log(headline2("Hello and Hi")); 
+*/ 
+
+/* Given is a string className. 
+Create a p element which has className as class and className 
+as content. In the output, the first letter should be displayed 
+in capital letters. Append the created element to the body tag. */
+
+/* A small 'g' is 'happy', but only if a small 'g' follows 
+before or after it. Return true if all g's are happy. */
+function gHappy(string) {
+  for(let i = 0; i < string.length; i++) {
+    if(string[i] == "g") {
+      if(string[i+1] == "g") {
+        return true;
+      }
+        else {
+          return false;
+      }
+    }
+  } 
+}
+console.log(gHappy('xyggxyz')); //true
+console.log(gHappy('xxzzgxxzz')); //false 
+
+/* A string string is given. Return the number of the longest block. 
+A block means a multiple occurrence of a letter in a row. */ 
+function longest(str) {
+  var max = 0,
+  maxChar = '';
+str.split('').forEach(function(char){
+ if(str.split(char).length > max) {
+     max = str.split(char).length;
+     maxChar = char;
+  }
+});
+return maxChar;
+};
+console.log(longest('BBBBcDDee'));
