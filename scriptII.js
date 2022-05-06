@@ -254,3 +254,54 @@ function getReducedPrice(price, discount) {
 }  
 console.log(getReducedPrice(1000, 20)); // 800
 console.log(getReducedPrice(99, 10)); //89.1
+
+// Three positive numbers are given: a, b and c. 
+// Return true if at least two of the numbers have the same last digit.
+function lastButNotLeast(a, b, c) {
+  const lastNumsA = String(a).slice(-1); 
+  const lastNumsB = String(b).slice(-1); 
+  const lastNumsC = String(c).slice(-1); 
+  if(lastNumsA === lastNumsB || lastNumsB === lastNumsC || lastNumsA == lastNumsC){
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(lastButNotLeast(37, 17, 19)); //true 
+console.log(lastButNotLeast(42, 19, 96)); //false
+
+/* Given is a number max representing the maximum number of groups in 
+the queue. You also have an array visitors of people, 
+where 'X' stands for one person and 'O' for one companion. 
+A group is minimum one 'O' and any number of 'X'. 
+Check if all groups fit into the queue. Return 'full' if all fit. 
+Otherwise, return the number of groups that are too many or not full. */
+function cinemaQueue(max, visitors) {
+  let counter = 0;
+  for(let i = 0; i < visitors.length; i ++) {
+    if((visitors[i] == "X") || (visitors[i] == "O")) {
+      counter ++;
+    }
+  }
+  let numOfX = 0; 
+  for(let i = 0; i < visitors.length; i ++) {
+      if(visitors[i] == "X") {
+        numOfX ++;
+    }
+  }
+  if (numOfX == max) { 
+    return ("Full");
+  }
+  else if (numOfX > max) { 
+    return "Too much: " + (numOfX - max);
+  }
+  else if (numOfX < max) {
+    return "not full: " + (max - numOfX);
+  }
+ 
+}
+  
+
+console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X'])); //full
+console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X','X','X'])); //too much
+console.log(cinemaQueue(4, ['X','O','X']));
