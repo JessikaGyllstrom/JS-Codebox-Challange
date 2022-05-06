@@ -207,3 +207,27 @@ function keyboardError(correct, wrong) {
 console.log(keyboardError('foobar', 'fiibnr')); // [ 'o', 'a' ]
 console.log(keyboardError('hello there', 'hgllu thgrg')); // [ 'e', 'o' ]
 
+/*
+Given are two strings password and password_repeat. Check if the password is secure by the following critera:
+- both passwords must match
+- password must be at least 8 chars
+- contains at least a number
+- contains at lease an uppercase letter
+- contains at least a lowercase letter
+- contains at least one of these special chars (&$%§-_)
+
+Return true only if all criteria are met, otherwise return false.
+*/
+function checkPassword(password, password_repeat) {
+  const specChars = /[`!@#$%^&*§_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    // check if strings contains at least one uppercase letter and one lowercase
+    if ( /[a-z]/.test(password) && /[A-Z]/.test(password) && /[a-z]/.test(password_repeat) && /[A-Z]/.test(password_repeat) && password.length > 8 && password_repeat.length > 8 && /\d/.test(password) && /\d/.test(password_repeat) && specChars.test(password)  && specChars.test(password_repeat)) {
+    return true;    
+  } else {
+    return false;
+  }
+}
+console.log(checkPassword('omvdsse', 'omvdsse'));//false
+console.log(checkPassword('YY&glk4Hfi_ffS', 'YY&glk4Hfi_ffS'));//true
+console.log(checkPassword('JoFDd$0MY6Ad4', 'JoFDd$0MY6Ad4'));//true
+console.log(checkPassword('Joifd$3', 'Joifd$3'));//false
