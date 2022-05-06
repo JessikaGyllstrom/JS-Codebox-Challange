@@ -277,16 +277,10 @@ A group is minimum one 'O' and any number of 'X'.
 Check if all groups fit into the queue. Return 'full' if all fit. 
 Otherwise, return the number of groups that are too many or not full. */
 function cinemaQueue(max, visitors) {
-  let counter = 0;
-  for(let i = 0; i < visitors.length; i ++) {
-    if((visitors[i] == "X") || (visitors[i] == "O")) {
-      counter ++;
-    }
-  }
   let numOfX = 0; 
   for(let i = 0; i < visitors.length; i ++) {
       if(visitors[i] == "X") {
-        numOfX ++;
+      numOfX ++;
     }
   }
   if (numOfX == max) { 
@@ -298,10 +292,7 @@ function cinemaQueue(max, visitors) {
   else if (numOfX < max) {
     return "not full: " + (max - numOfX);
   }
- 
 }
-  
-
 console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X'])); //full
 console.log(cinemaQueue(6, ['X','O','X','O','O','X','X','X','O','X','X','X'])); //too much
-console.log(cinemaQueue(4, ['X','O','X']));
+console.log(cinemaQueue(4, ['X','O','X'])); //not full: 2
