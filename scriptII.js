@@ -399,3 +399,18 @@ console.log(fizzBuzz(1, 5));//[ 1, 2, 'fizz', 4, 'Buzz' ]
 console.log(fizzBuzz(3, 9)); //[Fizz,4,Buzz,Fizz,7,8,Fizz]
 console.log(fizzBuzz(3, 16)); //  'fizz', 4, 'Buzz', 'fizz', 7, 8,'fizz', 'Buzz',11, 'fizz',13,14,'FizzBuzz', 16
 console.log(fizzBuzz(49, 53)); //[ 49, 'Buzz', 'fizz', 52, 53 ]
+
+/* Given are two arrays inside and outside. 
+Return true if all numbers present in inside array are also present in 
+outside array. */
+
+function outsideIn(outside, inside) {
+  if (outside.sort().join(',')=== inside.sort().join(',')) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(outsideIn([0,6,3,7,2], [2,6,3,0,7]));//true 
+console.log(outsideIn([1], [0,1]));//false
