@@ -431,3 +431,22 @@ function countMe(string) {
 console.log(countMe('Meishere')); //0
 console.log(countMe('xMeisxMe')); //2
 console.log(countMe('MeisxMe')); //1
+
+/* Given is an array numbers with integers. 
+Return true if a zero is next to a zero or a four is next to a four. 
+Return false if both occure. */
+function either404(numbers) {
+  for (let i = 0; i < numbers.length; i ++) {
+    if (numbers[i] == 4 || numbers[i] == 0) {
+      if (numbers[i - 1] == 4 || numbers[i + 1] == 4) {
+        return true;
+      } else if (numbers[i + 1] ||  numbers[i - 1]) {
+        return false;
+      }
+    } 
+  }
+}
+console.log(either404([2,8,4,4]));//true
+console.log(either404([4,3,1]));//false
+console.log(either404([0,0,3,6,4,4]));//false
+console.log(either404([1,4,4,0,2,0,9])); //true
