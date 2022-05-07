@@ -414,3 +414,20 @@ function outsideIn(outside, inside) {
 }
 console.log(outsideIn([0,6,3,7,2], [2,6,3,0,7]));//true 
 console.log(outsideIn([1], [0,1]));//false
+
+/* A String string is given. 
+Return the number of the word "Me" in this string. 
+Count 'Me' only if none 'x' is in front of it.*/
+function countMe(string) {
+  let counter = 0;
+  const myArray = string.split("");
+  for(let i = 0; i < string.length; i++) {
+    if(myArray[i] == "M" && myArray[i + 1] == "e" && myArray[i - 1] == "x") {
+      counter ++;
+    }
+  }
+  return counter;
+}
+console.log(countMe('Meishere')); //0
+console.log(countMe('xMeisxMe')); //2
+console.log(countMe('MeisxMe')); //1
