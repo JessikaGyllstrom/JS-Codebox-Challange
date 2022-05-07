@@ -367,3 +367,35 @@ str.split('').forEach(function(char){
 return maxChar;
 };
 console.log(longest('BBBBcDDee'));
+
+/* The variables start and end are given. 
+Return an array with the contents of the individual numbers. 
+Replace all numbers divisible by three with "Fizz" and all numbers 
+divisible by five with "Buzz". If a number is divisible by five and 
+three replace it by "FizzBuzz". */ 
+function fizzBuzz(start, end) {
+  let arr = [];
+  let length = end - start;
+
+  for(let i = 0; i < length + 1; i++) {
+    arr[i] = start;
+    start ++;
+    console.log(arr);
+  } 
+  for(let i = 0; i < arr.length; i ++) {   
+    if((arr[i] % 3 === 0) && (arr[i] % 5 === 0)) {
+        arr[i] = "FizzBuzz";
+    }
+    else if (arr[i] % 3 === 0) {
+      arr[i] = "fizz";
+    }
+    else if (arr[i] % 5 === 0) {
+      arr[i] = "Buzz";
+    } 
+  }
+  return arr;
+}
+console.log(fizzBuzz(1, 5));//[ 1, 2, 'fizz', 4, 'Buzz' ]
+console.log(fizzBuzz(3, 9)); //[Fizz,4,Buzz,Fizz,7,8,Fizz]
+console.log(fizzBuzz(3, 16)); //  'fizz', 4, 'Buzz', 'fizz', 7, 8,'fizz', 'Buzz',11, 'fizz',13,14,'FizzBuzz', 16
+console.log(fizzBuzz(49, 53)); //[ 49, 'Buzz', 'fizz', 52, 53 ]
